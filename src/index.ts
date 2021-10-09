@@ -12,7 +12,6 @@ dotenv.config({
 });
 
 const app: Express = express();
-const PORT = process.env.APP_PORT as string || 443;
 
 app.use(cors());
 
@@ -43,5 +42,5 @@ app.get('/api/free', (req: Request, res: Response) => {
 });
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  console.log("Express server listening on port %d in %s mode", process.env.PORT, app.settings.env);
 });
