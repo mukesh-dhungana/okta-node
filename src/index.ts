@@ -1,8 +1,11 @@
-import cors from "cors"
-import express, { Express, Request, Response } from "express";
-import { oktaAuthRequired } from "./lib/oktaAuthRequired";
+const cors = require("cors")
+//import express, { Express, Request, Response } from "express";
+//import { oktaAuthRequired } from "./lib/oktaAuthRequired";
 
-const app: Express = express();
+const express = require("express")
+const {oktaAuthRequired}= require("./lib/oktaAuthRequired").;
+
+//const app: Express = express();
 
 app.use(cors());
 
