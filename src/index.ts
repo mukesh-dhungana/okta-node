@@ -12,7 +12,7 @@ dotenv.config({
 });
 
 const app: Express = express();
-const PORT = process.env.APP_PORT as string;
+const PORT = process.env.APP_PORT as string || 443;
 
 app.use(cors());
 
@@ -43,5 +43,5 @@ app.get('/api/free', (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`We LIVE at http://localhost:${PORT}`);
+  console.log(`We LIVE at https://okta-node.herokuapp.com/`);
 });
