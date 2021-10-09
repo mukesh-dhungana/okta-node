@@ -1,9 +1,24 @@
-const http = require("http");
+const express = require("express");
+const cors = require("cors");
 
-var server=http.createServer(function(req,res){
-    res.writeHead(200);
-    res.end("Hello world");
+const app = express();
+
+app.use(cors());
+app.get("/api/free", (req, res) => {
+  res.json({
+    messages: [
+      {
+        date: new Date(),
+        text: "HAHAHAHAHA YOU THOT YOU COULD LOCK ME UP",
+      },
+    ],
+  });
 });
-server.listen(process.env.PORT || 5000, function () {
-  console.log("listening on *:5000");
+
+app.listen(process.env.PORT || 3000, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    process.env.PORT,
+    app.settings.env
+  );
 });
