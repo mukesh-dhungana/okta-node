@@ -2,9 +2,9 @@
   "name": "okta-auth-tutorial",
   "version": "1.0.0",
   "description": "Okta auth tutorial with Node.js and Typescript",
-  "main": "index.ts",
+  "main": "index.js",
   "engines": {
-    "node": "14.18.0",
+    "node": "16.10.0",
     "npm": "6.14.15"
   },
   "scripts": {
