@@ -2,10 +2,17 @@ const express = require("express");
 const cors = require("cors");
 
 const { oktaAuthRequired } = require("./lib/oktaAuthRequired.js");
+const  bodyParser= require('body-parser');
 
 const app = express();
 
 app.use(cors());
+app.use(bodyParser());
+app.post("/api/login", (req, res) => {
+  console.log("Request",req.body)
+  res.json({ acessToken: req.body.accessToken });
+});
+
 app.get("/api/free", (req, res) => {
   res.json({
     messages: [
@@ -31,7 +38,7 @@ app.get("/api/locked", oktaAuthRequired, (req, res) => {
     ],
   });
 });
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 8080, function () {
   console.log(
     "Express server listening on port %d in %s mode",
     process.env.PORT,
